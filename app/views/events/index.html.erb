@@ -1,0 +1,25 @@
+<h1>Events</h1>
+<label for="sort">Sort by:</label>
+<select id="sort">
+  <option value="name">Name</option>
+  <option value="date">Date</option>
+  <option value="location">Location</option>
+</select>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr class="event-row" data-name="<%= event.name %>" data-date="<%= event.date %>" data-location="<%= event.location %>">
+        <td><%= event.name %></td>
+        <td><%= event.date %></td>
+        <td><%= event.location %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

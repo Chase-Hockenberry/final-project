@@ -1,0 +1,25 @@
+<h1>Employees</h1>
+<label for="sort">Sort by:</label>
+<select id="sort">
+  <option value="name">Name</option>
+  <option value="date">Age</option>
+  <option value="location">Position</option>
+</select>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr class="employee-row" data-name="<%= employee.name %>" data-age="<%= employee.age %>" data-position="<%= employee.position %>">
+        <td><%= employee.name %></td>
+        <td><%= employee.age %></td>
+        <td><%= employee.position %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
